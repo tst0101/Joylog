@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<head>
+  <title>Joy Log - Login</title>
+  <style>
+  body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #efe4c8;
+  color: #2b2622;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav a {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #6d665c;
+  text-decoration: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 70px);
+}
+
+#left {
+  padding: 90px 80px;
+}
+
+.tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #7a725f;
+}
+
+#left h1 {
+  font-size: 64px;
+  margin: 20px 0;
+}
+
+#left p {
+  color: #6b645a;
+}
+
+article {
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+article small {
+  color: #6b645a;
+}
+
+#right {
+  background: #f4efe5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 340px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 6px;
+  border-radius: 14px;
+  border: 2px solid #e0d2a5;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #3a322b;
+  color: white;
+  cursor: pointer;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+#logo h2 {
+  margin: 0;
+}
+
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #6d665c;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+
+    <section id="logo">
+      <img src="JOYLOG lego.png" alt="Joy Log logo">
+      <h2>Joy Log</h2>
+    </section>
+  
+    <nav>
+      <a href="Home.html">How it works</a>
+      <a href="Sign up.html">Sign up</a>
+      <a href="Login.html">Login</a>
+      <a href="Home.html">Features</a>
+      <a href="Privacy.html">Privacy</a>
+      <a href="Journal.html">Journal</a>
+      <a href="Moodtracker.html">Mood Tracker</a>
+      <a href="Prompts.html">Prompts</a>
+      <a href="Settings.html">Settings</a>
+    </nav>
+  
+  </header>
+
+<main>
+
+<section class="left" style="margin: 15px;">
+  <div class="tag">WELCOME BACK</div>
+
+  <h1>Your journal<br>has been waiting</h1>
+
+  <p>
+    Log back in and pick up where you left off.<br>
+    Your entries, your mood chart, your prompts — all still there.
+  </p>
+
+  <article style="margin-top:30px; padding:20px; background:#fff; border-radius:12px;">
+    <small>Thursday · 19 Mar</small>
+    <p>"Had the best coffee this morning and just sat with it for a whole minute."</p>
+  </article>
+
+  <article style="margin-top:15px; padding:20px; background:#fff; border-radius:12px;">
+    <small>Wednesday · 18 Mar</small>
+    <p>"My friend sent a voice note just to check in. Didn't expect it at all."</p>
+  </article>
+</section>
+
+
+<section class="left" style="margin: 120px;">
+  <form onsubmit="login(event)">
+    <h2>Log in to Joy Log</h2>
+    <p>Don't have an account? <a href="signup.html">Sign up free</a></p>
+
+    <label>Email address</label>
+    <input type="email" id="email" placeholder="your@email.com" required>
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Your password" required>
+
+    <button type="submit">Log in</button>
+  </form>
+  <script>
+    function login(e) {
+      e.preventDefault();
+    
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+    
+      let savedEmail = localStorage.getItem("userEmail");
+      let savedPassword = localStorage.getItem("userPassword");
+    
+      if (email === savedEmail && password === savedPassword) {
+        alert("Login successful!");
+      } else {
+        alert("Invalid email or password");
+      }
+    }
+    </script>
+</article>
+</section>
+</main>
+
+
+
+</body>
+</html>

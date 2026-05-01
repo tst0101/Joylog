@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+  <head>
+    <style>
+      header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+/* LOGO SIDE */
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+#logo h2 {
+  margin: 0;
+}
+
+/* NAV */
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #6d665c;
+}
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #efe4c8;
+  color: #2b2622;
+}
+
+
+
+/* MAIN */
+main {
+  padding: 40px 100px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+p {
+  color: #6b645a;
+}
+
+/* BOX */
+.box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f4efe5;
+  border: 1px solid #ccc;
+}
+
+/* WEEK BARS */
+.bars {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.bar {
+  width: 60px;
+  height: 80px;
+}
+
+/* COLORS */
+.yellow { background: gold; }
+.peach { background: #e6a57e; }
+.green { background: #7aa37a; }
+.orange { background: #e07a52; }
+.pink { background: #e77aa8; }
+
+/* GRID */
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.stats div {
+  padding: 20px;
+  background: #e6d9b3;
+  text-align: center;
+}
+
+/* CALENDAR */
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.calendar span {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+    </style>
+  </head>
+  <body>
+<header>
+
+    <section id="logo">
+      <img src="JOYLOG lego.png" alt="Joy Log logo">
+      <h2>Joy Log</h2>
+    </section>
+  
+    <nav>
+      <a href="Home.html">How it works</a>
+      <a href="Sign up.html">Sign up</a>
+      <a href="Login.html">Login</a>
+      <a href="Home.html">Features</a>
+      <a href="Privacy.html">Privacy</a>
+      <a href="Journal.html">Journal</a>
+      <a href="Moodtracker.html">Mood Tracker</a>
+      <a href="Prompts.html">Prompts</a>
+      <a href="Settings.html">Settings</a>
+    </nav>
+  
+  </header>
+  <main>
+
+    <h1>Your mood over time</h1>
+    <p>A quiet record of how you have been feeling</p>
+    
+    <section class="box">
+      <p><b>THIS WEEK — MARCH 13 TO 19</b></p>
+    
+      <div class="bars">
+        <div class="bar yellow">Mon</div>
+        <hr>
+        <div class="bar peach">Tue</div>
+        <hr>
+        <div class="bar yellow">Wed</div>
+        <hr>
+        <div class="bar green">Thu</div>
+        <hr>
+        <div class="bar orange">Fri</div>
+        <hr>
+        <div class="bar yellow">Sat</div>
+        <hr>
+        <div class="bar pink">Sun</div>
+        <hr>
+      </div>
+    </section>
+    
+    <section id="grid">
+      <section class="box">
+        <p><b>THIS MONTH AT A GLANCE</b></p>
+    
+        <div class="stats">
+          <div>14<br><small>entries</small></div>
+          <div>3.8<br><small>average</small></div>
+          <div>6<br><small>streak</small></div>
+          <div>Thu<br><small>happiest</small></div>
+        </div>
+      </section>
+    
+      <section class="box">
+        <p><b>MARCH 2026 — DAILY MOODS</b></p>
+    
+        <div class="calendar">
+          <span class="yellow"></span>
+          <span class="peach"></span>
+          <span class="green"></span>
+          <span class="yellow"></span>
+          <span class="orange"></span>
+          <span class="pink"></span>
+          <span class="yellow"></span>
+        </div>
+      </section>
+    
+    </section>
+    
+    </main>
+    
+</body>
+
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+  <meta charset="UTF-8">
+  <title>Joy Log</title>
+  <style> 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background-color: #efe2c2;
+  color: #2f2a25;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #efe2c2;
+}
+
+.logo {
+  display: flex;
+  align-items:left;
+  gap: 8px;
+}
+
+.flower {
+  font-size: 26px;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #6d655d;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: black;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-logo {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #a38d5c;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #e6764f;
+}
+
+.subtext {
+  font-size: 18px;
+  color: #7a6f63;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 15px 30px;
+  border-radius: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.primary {
+  background: #3a322c;
+  color: white;
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid #3a322c;
+  color: #3a322c;
+}
+
+.secondary:hover {
+  background: #3a322c;
+  color: white;
+}
+
+.features {
+  background: #c9d7cf;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  color: #4e7c5c;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+
+.feature-card {
+  background: #f3f3f3;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+.feature-item h4 {
+  font-size: 20px;
+}
+
+.feature-item p {
+  color: #6f6f6f;
+}
+
+.divider {
+  height: 1px;
+  background: #ddd;
+}
+
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+}
+
+.yellow { background: #f4e3a1; }
+.orange { background: #f3b08b; }
+.green { background: #b7d3c0; }
+
+
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #c9d7cf;
+  padding: 40px;
+  gap: 40px;
+  border-top: 4px solid #8fb89b;
+}
+
+.journal-card {
+  background: #f3f3f3;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.date {
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.entry {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.mood-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  background: #ddd;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #e47a5b;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.bar {
+  width: 30px;
+  border-radius: 6px;
+}
+
+.bar.yellow { height: 60px; background: #f2d43d; }
+.bar.peach { height: 80px; background: #e7a07c; }
+.bar.green { height: 100px; background: #6ea57a; }
+.bar.orange { height: 110px; background: #e47a5b; }
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.active-day {
+  color: #e47a5b;
+  font-weight: bold;
+}
+
+.prompt {
+  background: #f3e4b6;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.prompt h4 {
+  margin-bottom: 10px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #f3dcc7;
+  text-align: center;
+  border-top: 1px solid #e0c7b2;
+  border-bottom: 1px solid #e0c7b2;
+}
+
+.stat {
+  padding: 40px 20px;
+  border-right: 1px solid #e0c7b2;
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.yellow { color: #e5c21a; }
+.orange { color: #e6764f; }
+.green { color: #6ea57a; }
+
+.prompts-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px;
+  background: #f3dcc7;
+  gap: 40px;
+}
+
+.prompts-left h2 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.prompts-left .desc {
+  color: #7a6f63;
+  max-width: 400px;
+}
+
+.tag {
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: #9a7b5f;
+}
+
+.prompt-box {
+  background: #f5f5f5;
+  padding: 25px;
+  border-radius: 20px;
+  border: 3px solid #f0d34f;
+  max-width: 400px;
+}
+
+.prompt-box h4 {
+  margin-bottom: 10px;
+}
+
+.privacy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #2f2a25;
+  color: #fff;
+  padding: 60px;
+  gap: 40px;
+}
+
+.privacy-left h2 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.privacy-left .desc {
+  color: #cfcfcf;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.outline-btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.privacy-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.privacy-right li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot.yellow { background: #f2d43d; }
+.dot.green { background: #6ea57a; }
+.dot.peach { background: #e7a07c; }
+.dot.orange { background: #e6764f; }
+
+.footer-note {
+  text-align: center;
+  background: #2f2a25;
+  color: #aaa;
+  padding: 20px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+/* LOGO SIDE */
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+#logo h2 {
+  margin: 0;
+}
+
+/* NAV */
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #6d665c;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+
+    <section id="logo">
+      <img src="JOYLOG lego.png" alt="Joy Log logo">
+      <h2>Joy Log</h2>
+    </section>
+  
+    <nav>
+      <a href="Home.html">How it works</a>
+      <a href="Sign up.html">Sign up</a>
+      <a href="Login.html">Login</a>
+      <a href="Home.html">Features</a>
+      <a href="Privacy.html">Privacy</a>
+      <a href="Journal.html">Journal</a>
+      <a href="Moodtracker.html">Mood Tracker</a>
+      <a href="Prompts.html">Prompts</a>
+      <a href="Settings.html">Settings</a>
+    </nav>
+  
+  </header>
+  <section class="hero">
+
+    <div class="hero-logo">
+      
+    </div>
+
+    <p class="tag">FREE JOURNALING FOR STUDENTS</p>
+
+    <h1>
+      Notice the small moments<br>
+      that make life <span class="highlight">good</span>
+    </h1>
+
+    <p class="subtext">
+      Joy Log helps you catch the tiny joyful things before the day
+      swallows them up. Takes 2 minutes. No pressure.
+    </p>
+
+    <div class="buttons">
+      <button class="primary"> <a href="Sign up.html">Start for free</a></button>
+      <button class="secondary"><a href="Home.html">How it works</a> </button>
+    </div>
+
+  </section>
+  <section class="features">
+
+    <h3 class="section-title">WHAT JOY LOG DOES</h3>
+  
+    <div class="feature-card">
+      <div class="feature-item">
+        <div class="icon yellow"></div>
+        <div>
+          <h4>Log a joyful moment</h4>
+          <p>Write, add a photo, or tap a mood. Done in under 2 minutes.</p>
+        </div>
+      </div>
+  
+      <div class="divider"></div>
+  
+      <div class="feature-item">
+        <div class="icon orange"></div>
+        <div>
+          <h4>Track your mood over time</h4>
+          <p>A simple 5 number scale and a monthly chart.</p>
+        </div>
+      </div>
+  
+      <div class="divider"></div>
+  
+      <div class="feature-item">
+        <div class="icon green"></div>
+        <div>
+          <h4>Get a prompt when you are stuck</h4>
+          <p>50+ prompts sorted by theme — ready whenever the page feels blank.</p>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+  
+  <section class="bottom">
+  
+    <div class="journal">
+      <h3>FROM THE JOURNAL</h3>
+  
+      <div class="journal-card">
+        <p class="date">Thursday · 19 Mar</p>
+        <p class="entry">
+          "Had the best coffee this morning and just
+          sat with it for a whole minute."
+        </p>
+  
+        <div class="mood-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  
+   
+    <div class="mood">
+      <h3>MOOD THIS WEEK</h3>
+  
+      <div class="chart">
+        <div class="bar yellow"></div>
+        <hr> 
+        <div class="bar peach"></div>
+        <hr>  
+        <div class="bar yellow"></div>
+     
+        <div class="bar green"></div>
+        <div class="bar orange tall"></div>
+        <div class="bar yellow"></div>
+        <div class="bar green"></div>
+  
+      <div class="days">
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span class="active-day">Fri</span>
+        <span>Sat</span>
+        <span>Sun</span>
+      </div>
+  
+      <div class="prompt">
+        <h4>TODAY'S PROMPT</h4>
+        <p>"What is one small thing that happened today that you want to remember?"</p>
+      </div>
+    </div>
+  
+  </section>
+
+<section class="stats">
+    <div class="stat">
+      <h2 class="yellow">2 min</h2>
+      <p>to write your first entry</p>
+    </div>
+  
+    <div class="stat">
+      <h2 class="orange">50+</h2>
+      <p>unique prompts ready</p>
+    </div>
+  
+    <div class="stat">
+      <h2 class="green">100%</h2>
+      <p>private and free forever</p>
+    </div>
+  </section>
+  
+  <section class="prompts-section">
+  
+    <div class="prompts-left">
+      <p class="tag">50+ PROMPTS</p>
+      <h2>Never stare at a blank page again</h2>
+      <p class="desc">
+        50+ prompts sorted into themes — gratitude,
+        creativity and energy — ready whenever you need them.
+      </p>
+    </div>
+  
+    <div class="prompts-right">
+      <div class="prompt-box">
+        <h4>TODAY'S PROMPT</h4>
+        <p>
+          "What is one small thing that happened today
+          that you want to remember?"
+        </p>
+      </div>
+    </div>
+  
+  </section>
+
+  <section class="privacy">
+  
+    <div class="privacy-left">
+      <p class="tag">PRIVACY</p>
+      <h2>Your journal belongs to you only</h2>
+      <p class="desc">
+        No one else can read your entries — not even us.
+        All data is encrypted and locked to your account.
+      </p>
+  
+      <button class="outline-btn"> <a href="Privacy.html"> Read our privacy policy</a></button>
+    </div>
+  
+    <div class="privacy-right">
+      <ul>
+        <li><span class="dot yellow"></span> All entries encrypted in transit and at rest</li>
+        <li><span class="dot green"></span> PIN or fingerprint lock on mobile</li>
+        <li><span class="dot peach"></span> Delete your account and all data in 2 taps</li>
+        <li><span class="dot orange"></span> No ads, no data selling, no third parties</li>
+      </ul>
+    </div>
+  
+  </section>
+  
+  <p class="footer-note">No credit card. No catch. No ads.</p>
+</body>
+</html>

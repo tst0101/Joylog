@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+<style>
+      header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+#logo h2 {
+  margin: 0;
+}
+
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #6d665c;
+}
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #efe4c8;
+  color: #2b2622;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #6d665c;
+}
+
+main {
+  padding: 50px 120px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h3 {
+  margin-top: 30px;
+  color: #8a8275;
+}
+
+.box {
+  margin-top: 10px;
+  padding: 20px;
+  background: #f4efe5;
+  border: 1px solid #ccc;
+}
+
+.box p {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.box p:last-child {
+  border-bottom: none;
+}
+
+button {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: #3a322b;
+  color: white;
+  border: none;
+}
+</style>
+</head>
+<body>
+    <header>
+
+        <section id="logo">
+          <img src="JOYLOG lego.png" alt="Joy Log logo">
+          <h2>Joy Log</h2>
+        </section>
+      
+        <nav>
+          <a href="Home.html">How it works</a>
+          <a href="Sign up.html">Sign up</a>
+          <a href="Login.html">Login</a>
+          <a href="Home.html">Features</a>
+          <a href="Privacy.html">Privacy</a>
+          <a href="Journal.html">Journal</a>
+          <a href="Moodtracker.html">Mood Tracker</a>
+          <a href="Prompts.html">Prompts</a>
+          <a href="Settings.html">Settings</a>
+        </nav>
+      
+      </header>
+
+<main>
+
+<h1>Settings</h1>
+<p>Manage your account and preferences</p>
+
+<h3>ACCOUNT</h3>
+<section class="box">
+  <p>Name: <span id="name"></span></p>
+  <p>Email: <span id="email"></span></p>
+  <p>Password: <span id="password"></span></p>
+</section>
+
+<h3>PRIVACY & SECURITY</h3>
+<section class="box">
+  <p>PIN lock</p>
+  <p>Fingerprint lock</p>
+  <p><a href="Privacy.html">Privacy policy →</a></p>
+</section>
+
+<h3>DATA</h3>
+<section class="box">
+  <p>Export all entries →</p>
+  <p style="color:red;">Delete all entries →</p>
+  <p style="color:red;">Delete account →</p>
+</section>
+
+<button id="save">Save changes</button>
+
+</main>
+
+<script>
+  document.getElementById("name").textContent =
+    localStorage.getItem("name") || "Not set";
+
+  document.getElementById("email").textContent =
+    localStorage.getItem("email") || "Not set";
+
+  let pass = localStorage.getItem("password");
+  document.getElementById("password").textContent =
+    pass ? "********" : "Not set";
+
+  function saveUser() {
+    localStorage.setItem("name", document.getElementById("name").value);
+    localStorage.setItem("email", document.getElementById("email").value);
+    localStorage.setItem("password", document.getElementById("password").value);
+</script>
+
+</body>
+</html> 

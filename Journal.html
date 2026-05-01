@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<head>
+  <title>Journal</title>
+<style>
+  body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #efe4c8;
+  color: #2b2622;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #6d665c;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: calc(100vh - 60px);
+}
+
+#left {
+  padding: 30px;
+  border-right: 2px solid #e0d2a5;
+}
+
+#new {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  background: #3a322b;
+  color: white;
+  border: none;
+}
+
+article {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f4efe5;
+  border: 1px solid #ccc;
+}
+
+#right {
+  padding: 40px;
+}
+
+#right h1 {
+  font-size: 40px;
+}
+
+#mood span {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 35px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+}
+
+#prompt {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e6d9b3;
+  border: 1px solid #e0c84f;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  background: #3a322b;
+  color: white;
+}
+
+#light {
+  background: #ddd;
+  color: black;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+#logo h2 {
+  margin: 0;
+}
+
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #6d665c;
+}
+</style>
+</head>
+<body>
+
+  <header>
+
+    <section id="logo">
+      <img src="JOYLOG lego.png" alt="Joy Log logo">
+      <h2>Joy Log</h2>
+    </section>
+  
+    <nav>
+      <a href="Home.html">How it works</a>
+      <a href="Sign up.html">Sign up</a>
+      <a href="Login.html">Login</a>
+      <a href="Home.html">Features</a>
+      <a href="Privacy.html">Privacy</a>
+      <a href="Journal.html">Journal</a>
+      <a href="Moodtracker.html">Mood Tracker</a>
+      <a href="Prompts.html">Prompts</a>
+      <a href="Settings.html">Settings</a>
+    </nav>
+  
+  </header>
+
+<main>
+
+
+<section id="left">
+
+  <p><b>YOUR ENTRIES</b></p>
+
+  <button id="new">+ New entry</button>
+
+  <article>
+    <small>Today · 19 Mar</small>
+    <p>"Had the best coffee this morning..."</p>
+  </article>
+
+  <article>
+    <small>Wednesday · 18 Mar</small>
+    <p>"My friend sent a voice note..."</p>
+  </article>
+
+  <article>
+    <small>Tuesday · 17 Mar</small>
+    <p>"Finally finished that chapter..."</p>
+  </article>
+
+</section>
+
+<section id="right">
+
+  <small>Thursday · 19 March 2026</small>
+  <h1>Today's entry</h1>
+
+  <p><b>How are you feeling?</b></p>
+
+  <div id="mood">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+  </div>
+
+  <section id="prompt">
+    <p><b>TODAY'S PROMPT</b></p>
+    <p>"What is one small thing that happened today that you want to remember?"</p>
+  </section>
+
+  <textarea rows="6">
+Had the best coffee this morning and just sat with it...
+  </textarea>
+
+  <br><br>
+
+  <button>Save entry</button>
+  <button id="light">Add a photo</button>
+
+</section>
+
+</main>
+
+</body>
+</html>

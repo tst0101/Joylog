@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Joy Log - Sign Up</title>
+<style> 
+  body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #efe4c8;
+  color: #2b2622;
+}
+
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 50px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+nav a {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #6d665c;
+  text-decoration: none;
+}
+
+/* LAYOUT */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 70px);
+}
+
+/* LEFT */
+.left {
+  padding: 90px 80px;
+}
+
+.tag {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #7a725f;
+}
+
+.left h1 {
+  font-size: 64px;
+  margin: 20px 0;
+}
+
+.left p {
+  color: #6b645a;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-top: 12px;
+}
+
+li::before {
+  content: "• ";
+}
+
+/* RIGHT */
+.right {
+  background: #f4efe5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 340px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 6px;
+  border-radius: 14px;
+  border: 2px solid #e0d2a5;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #3a322b;
+  color: white;
+  cursor: pointer;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-bottom: 1px solid #d8cfae;
+}
+
+/* LOGO SIDE */
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+#logo h2 {
+  margin: 0;
+}
+
+/* NAV */
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #6d665c;
+}
+</style>
+<body>
+  <header>
+
+    <section id="logo">
+      <img src="JOYLOG lego.png" alt="Joy Log logo">
+      <h2>Joy Log</h2>
+    </section>
+  
+    <nav>
+      <a href="Home.html">How it works</a>
+      <a href="Sign up.html">Sign up</a>
+      <a href="Login.html">Login</a>
+      <a href="Home.html">Features</a>
+      <a href="Privacy.html">Privacy</a>
+      <a href="Journal.html">Journal</a>
+      <a href="Moodtracker.html">Mood Tracker</a>
+      <a href="Prompts.html">Prompts</a>
+      <a href="Settings.html">Settings</a>
+    </nav>
+  
+  </header>
+<main>
+
+<section class="left">
+  <div class="tag">JOIN JOY LOG — IT IS FREE</div>
+
+  <h1>Start noticing<br>the good things</h1>
+
+  <p>
+    Create your free account in under a minute.<br>
+    No credit card, no catch, no ads — ever.
+  </p>
+
+  <ul>
+    <li>Write your first entry in under 2 minutes</li>
+    <li>Track your mood with a simple 5-emoji scale</li>
+    <li>Get prompts whenever the page feels blank</li>
+    <li>Your entries are private and encrypted</li>
+    <li>Free forever — no plans, no upgrades</li>
+  </ul>
+</section>
+
+<section class="right">
+  <form onsubmit="signup(event)">
+    <h2>Create your account</h2>
+    <p>Already have an account? <a href="login.html">Log in here</a></p>
+
+    <label>Your name</label>
+    <input type="text" placeholder="e.g. Aisha">
+
+    <label>Email address</label>
+    <input type="email" id="email" placeholder="your@email.com" required>
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Create a password" required>
+
+    <button type="submit">Create my account</button>
+
+    <p style="font-size:12px; margin-top:10px;">
+      By signing up you agree to our Terms of Service and Privacy Policy
+    </p>
+  </form>
+</section>
+
+</main>
+
+<script>
+function signup(e) {
+
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("userPassword", password);
+
+  alert("Account created!");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
